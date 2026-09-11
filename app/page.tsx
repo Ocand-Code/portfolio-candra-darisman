@@ -121,7 +121,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
           <a href="#beranda" className="text-sm font-bold tracking-widest text-[#16294d]">
-            CANDRA DARISMAN
+            my Portfolio
           </a>
           <nav aria-label="Navigasi utama" className="flex items-center gap-1 overflow-x-auto">
             {NAV.map((n) => (
