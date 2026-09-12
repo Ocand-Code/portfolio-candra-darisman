@@ -7,7 +7,8 @@ const CONTACT = {
   location: "Bandung, Jawa Barat, Indonesia",
   linkedin: "https://www.linkedin.com/in/candra-darisman/",
 };
-const CV_PATH = "/Candra-Darisman-CV.pdf";
+const CV_ID = "/Candra-Darisman-CV-ID.pdf";
+const CV_EN = "/Candra-Darisman-CV-EN.pdf";
 // ─────────────────────────────────────────────────────────────────
 
 const NAV = [
@@ -133,13 +134,27 @@ export default function Home() {
                 {n.label}
               </a>
             ))}
-            <a
-              href={CV_PATH}
-              download
-              className="ml-2 hidden whitespace-nowrap rounded-full bg-[#16294d] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0f1e3a] sm:inline-block"
-            >
-              Unduh Resume
-            </a>
+            <details className="relative ml-2 hidden shrink-0 sm:block">
+              <summary className="cursor-pointer whitespace-nowrap rounded-full bg-[#16294d] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0f1e3a] [&::-webkit-details-marker]:hidden">
+                Unduh Resume ▾
+              </summary>
+              <div className="absolute right-0 mt-2 w-48 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
+                <a
+                  href={CV_ID}
+                  download
+                  className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-100"
+                >
+                  Indonesia (PDF)
+                </a>
+                <a
+                  href={CV_EN}
+                  download
+                  className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-100"
+                >
+                  English (PDF)
+                </a>
+              </div>
+            </details>
           </nav>
         </div>
       </header>
@@ -180,15 +195,22 @@ export default function Home() {
             </p>
             <div className="no-print mt-6 flex flex-wrap gap-3">
               <a
-                href={CV_PATH}
+                href={CV_ID}
                 download
                 className="rounded-full bg-[#16294d] px-6 py-3 text-sm font-semibold text-white shadow hover:bg-[#0f1e3a]"
               >
-                Unduh Resume
+                Resume Indonesia
+              </a>
+              <a
+                href={CV_EN}
+                download
+                className="rounded-full border border-[#16294d] px-6 py-3 text-sm font-semibold text-[#16294d] hover:bg-slate-100"
+              >
+                English Resume
               </a>
               <a
                 href="#kontak"
-                className="rounded-full border border-[#16294d] px-6 py-3 text-sm font-semibold text-[#16294d] hover:bg-slate-100"
+                className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100"
               >
                 Hubungi Saya
               </a>
@@ -294,8 +316,11 @@ export default function Home() {
                 </div>
               </dl>
               <div className="no-print mt-5 flex flex-wrap gap-3">
-                <a href={CV_PATH} download className="rounded-full bg-white px-5 py-2.5 text-sm font-bold text-[#16294d] hover:bg-slate-100">
-                  Unduh Resume
+                <a href={CV_ID} download className="rounded-full bg-white px-5 py-2.5 text-sm font-bold text-[#16294d] hover:bg-slate-100">
+                  Resume ID
+                </a>
+                <a href={CV_EN} download className="rounded-full border border-white/40 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10">
+                  Resume EN
                 </a>
                 <a href={`mailto:${CONTACT.email}`} className="rounded-full border border-white/40 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10">
                   Kirim Email
@@ -332,7 +357,8 @@ export default function Home() {
           <p>© {new Date().getFullYear()} Candra Darisman — PPIC • Supply Chain • Operations</p>
           <nav aria-label="Navigasi footer" className="flex gap-4">
             <a href="#beranda" className="hover:text-[#16294d]">Beranda</a>
-            <a href={CV_PATH} download className="hover:text-[#16294d]">Resume</a>
+            <a href={CV_ID} download className="hover:text-[#16294d]">Resume ID</a>
+            <a href={CV_EN} download className="hover:text-[#16294d]">Resume EN</a>
             <a href="#kontak" className="hover:text-[#16294d]">Kontak</a>
           </nav>
         </div>
